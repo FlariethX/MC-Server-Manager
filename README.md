@@ -1,12 +1,16 @@
 # 🧩 MC Server Manager
 
-> Керуй своїм Minecraft-сервером (Paper/Bukkit) з одного акуратного вікна — без баток, без чорних консолей, без зайвих рухів.
+> Керуй своїм локальним Minecraft-сервером з одного акуратного вікна — без баток, без чорних консолей, без зайвих рухів.
 
 Десктопний застосунок для Windows, який об'єднує запуск сервера, консоль, файловий провідник і редактор конфігів в одному місці. Один `.exe` — і Java-сервер під повним контролем.
 
 ![status](https://img.shields.io/badge/platform-Windows-0078D6?style=flat-square)
 ![status](https://img.shields.io/badge/build-PyInstaller-c900fb?style=flat-square)
 ![status](https://img.shields.io/badge/UI-pywebview-e070ff?style=flat-square)
+
+<img width="692" height="397" alt="зображення" src="https://github.com/user-attachments/assets/21b509be-51a9-4937-a0f6-70e5a04332e3" />
+<img width="1920" height="1003" alt="зображення" src="https://github.com/user-attachments/assets/dd0a4dfc-dcae-4fb6-9361-0db97f5ff2b4" />
+<img width="1920" height="1004" alt="зображення" src="https://github.com/user-attachments/assets/fff30037-e841-42ac-9c4f-211b9b645b45" />
 
 ---
 
@@ -21,8 +25,14 @@
 📁 **Файловий провідник**
 Навігація по папці сервера, створення, перейменування та видалення файлів і папок прямо в застосунку.
 
+<img width="620" height="459" alt="зображення" src="https://github.com/user-attachments/assets/f1ca8694-cee7-4c41-b356-82007eab518b" />
+<img width="432" height="454" alt="зображення" src="https://github.com/user-attachments/assets/e9bca393-79f2-4edd-9370-717d89d4e2ed" />
+
 📝 **Редактор конфігів**
 Кілька вкладок одночасно, підсвітка синтаксису YAML/properties, швидка вставка PlaceholderAPI-плейсхолдерів і UTF-8 символів.
+
+<img width="1101" height="969" alt="зображення" src="https://github.com/user-attachments/assets/eeaee025-e865-4747-9ee3-07e06ef12e6d" />
+<img width="1100" height="966" alt="зображення" src="https://github.com/user-attachments/assets/4d34362f-9e4f-4c39-a138-4bdc1091b80d" />
 
 📦 **Один файл**
 Все запаковано в один `.exe` — на комп'ютері користувача не потрібен ані Python, ані додаткові бібліотеки.
