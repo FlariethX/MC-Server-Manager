@@ -55,8 +55,8 @@
 ## 🔨 Збірка з вихідного коду
 
 ```bash
-git clone https://github.com/<your-username>/<repo>.git
-cd <repo>
+git clone https://github.com/FlariethX/MC-Server-Manager.git
+cd MC-Server-Manager
 build.bat
 ```
 
