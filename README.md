@@ -4,8 +4,8 @@
 
 Застосунок, який об'єднує запуск сервера, консоль, файловий провідник і редактор конфігів в одному місці.
 
-![status](https://img.shields.io/badge/platform-Windows-e070ff?style=plastic) build.bat  
-![status](https://img.shields.io/badge/platform-MacOS-e070ff?style=plastic) build.sh
+![status](https://img.shields.io/badge/platform-Windows-e070ff?style=plastic)  
+![status](https://img.shields.io/badge/platform-MacOS-e070ff?style=plastic)
 
 <img width="692" height="397" alt="зображення" src="https://github.com/user-attachments/assets/21b509be-51a9-4937-a0f6-70e5a04332e3" />
 <img width="1920" height="1003" alt="зображення" src="https://github.com/user-attachments/assets/dd0a4dfc-dcae-4fb6-9361-0db97f5ff2b4" />
@@ -35,13 +35,6 @@
 
 📦 **Один файл**
 Все запаковано в один `.exe` — на комп'ютері користувача не потрібен ані Python, ані додаткові бібліотеки.
-
----
-
-## 🛠️ Вимоги
-
-- 🪟 Windows
-- ☕ Java 17+ — потрібна лише для самого Minecraft-сервера, не для застосунку
 
 ---
 
