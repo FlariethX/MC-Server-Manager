@@ -4,7 +4,7 @@
 
 Застосунок для Windows/MacOS, який об'єднує запуск сервера, консоль, файловий провідник і редактор конфігів в одному місці. Один `.exe`/`.dmg` — і Java-сервер під повним контролем.
 
-![Windows](https://img.shields.io/badge/Windows-e070ff?style=flat-square)  ![Windows](https://img.shields.io/badge/MacOS-e070ff?style=flat-square)
+![Windows](https://img.shields.io/badge/platform-Windows-e070ff?style=flat-square)  ![Windows](https://img.shields.io/badge/platform-MacOS-e070ff?style=plastic)
 ![status](https://img.shields.io/badge/build-PyInstaller-c900fb?style=flat-square)
 ![status](https://img.shields.io/badge/UI-pywebview-e070ff?style=flat-square)
 
