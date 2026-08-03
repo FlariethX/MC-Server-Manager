@@ -44,41 +44,36 @@
 
 ---
 
-## 🔨 Збірка з вихідного коду
-
-```bash
-git clone https://github.com/FlariethX/MC-Server-Manager.git
-cd MC-Server-Manager
-build.bat
-```
-
-`build.bat` сам підтягне залежності (`pywebview`, `pyinstaller`) і збере готовий `MC Server Manager.exe` у папці `dist\`.
-
----
-
 ## 📂 Структура проєкту
 
 ```
+Windows
 .
-├── manager.py          — бекенд: pywebview API, робота з процесом сервера й файлами
-├── requirements.txt    — Python-залежності для збірки
-├── build.bat           — скрипт збірки в .exe (PyInstaller, --onefile)
-├── icon.ico            — іконка застосунку
-└── web/                — інтерфейс
+├── manager.py
+├── requirements.txt
+├── build.bat          -  скрипт збірки в .exe
+├── icon.ico
+└── web/
+    ├── index.html
+    ├── splash.html
+    ├── style.css
+    ├── splash.css
+    └── app.js
+
+MacOS
+.
+├── manager.py
+├── requirements.txt
+├── build.sh          -  скрипт збірки в .dmg
+├── icon.icns
+└── web/
     ├── index.html
     ├── splash.html
     ├── style.css
     ├── splash.css
     └── app.js
 ```
-
----
-
-## ⚙️ Технології
-
-- [pywebview](https://pywebview.flowrl.com/) — нативне вікно + міст Python ↔ JS
-- Ванільний HTML/CSS/JS без фреймворків
-- [PyInstaller](https://pyinstaller.org/) — збірка в один `.exe`
+Готовий файл збережеться в теку `/dist`
 
 ---
 
