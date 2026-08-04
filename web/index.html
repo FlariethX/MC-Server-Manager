@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>MC Server Manager</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body oncontextmenu="return false;">
+
+<div class="background"></div>
+
+<div class="columns">
+
+  <section class="panel accent-menubar grid-toolbar">
+    <div class="menubar-inner">
+      <div class="menubar-block menubar-core">
+        <div class="menubar-core-row">
+          <span class="chip chip-menubar"><span class="ico" data-icon="download"></span></span>
+          <span class="menubar-label">ЯДРО</span>
+          <div class="paper-select-wrap">
+            <button class="paper-select-btn" id="paperVersionBtn" type="button">
+              <span id="paperVersionBtnLabel">Завантаження версій...</span>
+              <span class="ico chevron" data-icon="chevronDown"></span>
+            </button>
+          </div>
+
+          <span class="chip chip-menubar chip-java"><span class="ico" data-icon="coffee"></span></span>
+          <span class="menubar-label">JAVA</span>
+          <div class="paper-select-wrap">
+            <button class="paper-select-btn" id="javaVersionBtn" type="button">
+              <span id="javaVersionBtnLabel">Завантаження версій...</span>
+              <span class="ico chevron" data-icon="chevronDown"></span>
+            </button>
+          </div>
+
+          <button class="btn btn-secondary" id="paperBrowseDirBtn" title="Обрати папку для встановлення ядра">
+            <span class="icon"><span class="ico" data-icon="folder"></span></span> Папка
+          </button>
+
+          <button class="btn btn-secondary" id="installAllBtn">
+            <span class="icon"><span class="ico" data-icon="refresh"></span></span> Встановити
+          </button>
+        </div>
+
+        <span class="menubar-hint" id="installStatusHint"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel accent-menubar accent-resbar grid-resbar">
+    <div class="menubar-inner menubar-inner-resbar">
+      <div class="menubar-block menubar-resources">
+        <span class="resource-stat resource-cpu">
+          <span class="ico" data-icon="cpu"></span>
+          <span class="resource-label">CPU</span>
+          <b id="resCpuLabel">—</b>
+        </span>
+        <span class="resource-stat resource-ram">
+          <span class="ico" data-icon="ram"></span>
+          <span class="resource-label">RAM</span>
+          <b id="resRamLabel">—</b>
+        </span>
+        <span class="resource-stat resource-uptime">
+          <span class="ico" data-icon="clock"></span>
+          <span class="resource-label">Час роботи серверу</span>
+          <b id="resUptimeLabel">—</b>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel accent-server grid-server">
+    <div class="card-title card-title-server">
+      <span class="chip chip-server"><span class="ico" data-icon="server"></span></span>
+      <span class="chip-label">С Е Р В Е Р</span>
+      <span class="status-badge" id="statusBadge">
+        <span class="dot dot-off" id="statusDot"></span>
+        <span class="status-text status-off" id="statusText">ВИМКНЕНО</span>
+      </span>
+    </div>
+
+    <div class="local-server-label">ЛОКАЛЬНИЙ СЕРВЕР</div>
+
+    <div class="core-info-box" id="coreInfoBox">
+      <div class="core-info-row">
+        <span class="core-info-label">Версія</span>
+        <span class="core-info-value mono" id="coreInfoVersion">—</span>
+      </div>
+      <div class="core-info-row">
+        <span class="core-info-label">Java</span>
+        <span class="core-info-value mono" id="coreInfoJava">—</span>
+      </div>
+      <div class="core-info-row">
+        <span class="core-info-label">Ядро</span>
+        <span class="core-info-value mono" id="coreInfoJar">—</span>
+      </div>
+    </div>
+
+    <div class="ram-slider-row">
+      <div class="ram-slider-label">
+        <span class="ico" data-icon="ram"></span>
+        <span class="ram-slider-title">Виділено RAM</span>
+        <span class="ram-slider-value" id="ramSliderValue">4 ГБ</span>
+      </div>
+      <input type="range" id="ramSlider" class="ram-slider" min="1" max="8" step="0.5" value="4">
+      <div class="ram-slider-scale">
+        <span id="ramSliderMin">1 ГБ</span>
+        <span id="ramSliderMax">8 ГБ</span>
+      </div>
+    </div>
+
+    <div class="jar-path-row">
+      <input type="text" id="jarPathInput" class="text-input" placeholder="Шлях до ядра сервера (.jar)">
+    </div>
+
+    <button class="btn btn-secondary btn-block" id="browseJarBtn">
+      <span class="icon"><span class="ico" data-icon="folder"></span></span> Обрати папку з ядром
+    </button>
+
+    <div class="btn-row">
+      <button class="btn btn-primary" id="startBtn">
+        <span class="icon"><span class="ico" data-icon="play"></span></span> Старт
+      </button>
+      <button class="btn btn-warning" id="restartBtn" disabled>
+        <span class="icon"><span class="ico" data-icon="refresh"></span></span> Рестарт
+      </button>
+      <button class="btn btn-danger" id="stopBtn" disabled>
+        <span class="icon"><span class="ico" data-icon="stop"></span></span> Стоп
+      </button>
+    </div>
+  </section>
+
+  <section class="panel accent-files panel-full grid-files">
+    <div class="card-title card-title-files">
+      <span class="chip chip-files"><span class="ico" data-icon="folder"></span></span>
+      <span class="chip-label">Ф А Й Л И</span>
+      <div class="files-nav-btns">
+        <button class="icon-btn" id="backBtn" disabled title="Назад"><span class="ico" data-icon="back"></span></button>
+        <button class="icon-btn" id="addBtn" disabled title="Створити"><span class="ico" data-icon="plus"></span></button>
+      </div>
+    </div>
+
+    <div class="explorer-path-row">
+      <div class="text-input explorer-path mono" id="explorerPath">Ядро не обрано</div>
+    </div>
+
+    <div class="tree-header">
+      <span class="th-name">Назва</span>
+      <span class="th-size">Розмір</span>
+    </div>
+
+    <div class="tree-box" id="fileTree"></div>
+
+    <button class="btn btn-secondary btn-block" id="refreshBtn">
+      <span class="icon"><span class="ico" data-icon="refresh"></span></span> Оновити файли
+    </button>
+  </section>
+
+  <section class="panel accent-console panel-full grid-console">
+    <div class="card-title">
+      <span class="chip chip-console"><span class="ico" data-icon="terminal"></span></span>
+      <span class="chip-label">К О Н С О Л Ь</span>
+    </div>
+
+    <div class="console-box" id="consoleBox"></div>
+
+    <div class="console-input-wrap">
+      <div class="command-suggestions" id="commandSuggestions"></div>
+      <input type="text" id="commandInput" class="text-input mono" placeholder="$ команда і Enter · Tab — підказки" disabled autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    </div>
+  </section>
+
+  <section class="panel accent-editor panel-full grid-editor">
+    <div class="card-title">
+      <span class="chip chip-editor"><span class="ico" data-icon="document"></span></span>
+      <span class="chip-label">Р Е Д А К Т О Р</span>
+      <div class="editor-title-btns">
+        <div class="symbols-picker">
+          <button class="labeled-icon-btn symbols-btn" id="placeholdersBtn" title="Плейсхолдери">
+            <span class="ico" data-icon="placeholders"></span> Placeholders
+          </button>
+        </div>
+        <div class="symbols-picker">
+          <button class="labeled-icon-btn symbols-btn" id="symbolsBtn" title="Символи">
+            <span class="ico" data-icon="symbols"></span> UTF-8
+          </button>
+        </div>
+        <button class="labeled-icon-btn save-btn" id="saveBtn" disabled title="Зберегти файл">
+          <span class="ico" data-icon="save"></span> Зберегти
+        </button>
+      </div>
+    </div>
+
+    <div class="editor-toolbar">
+      <div class="editor-tabs" id="editorTabs"></div>
+    </div>
+
+    <div class="editor-wrap">
+      <div class="line-numbers mono" id="lineNumbers">1</div>
+      <div class="editor-code-wrap">
+        <pre class="editor-highlight mono" id="editorHighlight"><code></code></pre>
+        <textarea class="editor-box mono" id="editorBox" spellcheck="false" wrap="off" disabled></textarea>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="context-menu" id="contextMenu"></div>
+
+<div class="symbols-dropdown paper-version-dropdown" id="paperVersionDropdown">
+  <div class="paper-version-list" id="paperVersionList"></div>
+</div>
+
+<div class="symbols-dropdown paper-version-dropdown" id="javaVersionDropdown">
+  <div class="paper-version-list" id="javaVersionList"></div>
+</div>
+
+<div class="symbols-dropdown" id="symbolsDropdown">
+  <div class="symbols-grid" id="symbolsGrid"></div>
+  <div class="symbols-toast" id="symbolsToast"></div>
+</div>
+
+<div class="symbols-dropdown placeholders-dropdown" id="placeholdersDropdown">
+  <a class="placeholders-source-link" id="placeholdersSourceLink" href="https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders#parseother" target="_blank" rel="noopener">
+    <span class="ico" data-icon="github"></span> Список усіх плейсхолдерів
+  </a>
+  <div class="placeholders-jump" id="placeholdersJump"></div>
+  <div class="placeholders-list" id="placeholdersList"></div>
+  <div class="symbols-toast" id="placeholdersToast"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
