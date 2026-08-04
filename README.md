@@ -9,7 +9,6 @@
 
 ![Platform](https://img.shields.io/badge/platform-macOS-c900fb?style=flat-square&logo=apple)
 ![Made for](https://img.shields.io/badge/зроблено%20для-Paper-c900fb?style=flat-square)
-![Java](https://img.shields.io/badge/Java-21-c900fb?style=flat-square&logo=coffeescript)
 
 </div>
 
