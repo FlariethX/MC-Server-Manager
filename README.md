@@ -12,6 +12,9 @@
 
 </div>
 
+<img width="586" height="356" alt="зображення" src="https://github.com/user-attachments/assets/2e680001-3c65-493b-b766-01692f95408f" />
+<img width="1920" height="972" alt="зображення" src="https://github.com/user-attachments/assets/f46a8111-8f00-4ffd-aae4-34cc061d701a" />
+
 ---
 
 ## ✨ Що вміє застосунок
