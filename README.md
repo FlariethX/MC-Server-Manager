@@ -7,9 +7,9 @@
 Запуск, консоль, файли та конфіги — все в одному стильному macOS-застосунку.
 Без командного рядка. Без пошуку потрібної Java по інтернету. Без зайвих рухів.
 
-![Platform](https://img.shields.io/badge/platform-macOS-black?style=flat-square&logo=apple)
+![Platform](https://img.shields.io/badge/platform-macOS-c900fb?style=flat-square&logo=apple)
 ![Made for](https://img.shields.io/badge/зроблено%20для-Paper-c900fb?style=flat-square)
-![Java](https://img.shields.io/badge/Java-21-e070ff?style=flat-square&logo=coffeescript)
+![Java](https://img.shields.io/badge/Java-21-c900fb?style=flat-square&logo=coffeescript)
 
 </div>
 
